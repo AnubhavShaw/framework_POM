@@ -2,48 +2,59 @@ package pageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import reusableAbstractComponent.AbstractComponent;
 
-public class LoginPageObject
+
+
+public class LoginPageObject extends AbstractComponent
 {
 	WebDriver driver;
+	//local variable
 	public LoginPageObject(WebDriver driver)
+	//Construtor
 	{
-		
+		super(driver);
 		this. driver=driver;
+		PageFactory.initElements(driver, this);
 		
 	}
 	
-	public void openLoginPage()
+	@FindBy(id="email")
+	WebElement email;
+	@FindBy(name="pass")
+	WebElement pass;
+	@FindBy(name="login")
+	WebElement lg_button;
+	
+	public void openLoginPage()//Method
 	{
 		
 	driver.get("https://wwww.facebook.com/");	
+		max();
 		
 	}
-	public void doLogin() 
+	public void doLogin()// Method 
 	{
-		WebElement email = driver.findElement(By.xpath("//input[@id='email']"));
-		
-		WebElement pass = driver.findElement(By.xpath("//input[@type='password']"));
-		
-		WebElement login = driver.findElement(By.xpath("//button[@name='login']"));
 		
 		email.sendKeys("anubhav.mukul11@gmail.com");
 		pass.sendKeys("12345700");
-		login.click();
+		lg_button.click();
 		
 		
 	}
-	public void launchedAndLogin(String un, String pw)
+	public void launchedAndLogin(String username, String password)//Method...Pass parameter username & password.
 	{
 		
 		driver.get("https://wwww.facebook.com/");
-		WebElement email=driver.findElement(By.xpath("//input[@id='email']"));
-		WebElement pass=driver.findElement(By.xpath("//input[@type='password']"));
-		WebElement login=driver.findElement(By.xpath("//button[@name='login']"));
 		
-		email.sendKeys(un);
-		pass.sendKeys(pw);
-		login.click();
+		
+		email.sendKeys(username);
+		pass.sendKeys(password);
+		lg_button.click();
+		close();
+		
 		
 	}
 
