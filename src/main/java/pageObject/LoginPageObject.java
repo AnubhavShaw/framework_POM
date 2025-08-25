@@ -28,6 +28,8 @@ public class LoginPageObject extends AbstractComponent
 	@FindBy(name="login")
 	WebElement lg_button;
 	
+	
+	
 	public void openLoginPage()//Method
 	{
 		
@@ -46,10 +48,8 @@ public class LoginPageObject extends AbstractComponent
 	}
 	public void launchedAndLogin(String username, String password)//Method...Pass parameter username & password.
 	{
-		
 		driver.get("https://wwww.facebook.com/");
-		
-		
+		max();
 		email.sendKeys(username);
 		pass.sendKeys(password);
 		lg_button.click();
