@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import pageObject.LoginPageObject;
 
 public class BasicTestComponent 
@@ -16,7 +15,7 @@ public class BasicTestComponent
 	{
 		
 		Properties pr= new Properties(); 
-		FileInputStream fis=new FileInputStream("D:\\Automation Projects\\EclipseWorkSpace\\framework_POM\\src\\main\\java\\resource");
+		FileInputStream fis=new FileInputStream("D:\\Automation Projects\\EclipseWorkSpace\\framework_POM\\src\\main\\java\\resource\\globalData.properties");
 		pr.load(fis);
 		String browser_Name= pr.getProperty("browser");
 		if(browser_Name.equalsIgnoreCase("chrome"))
