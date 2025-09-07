@@ -53,7 +53,7 @@ public class LoginPageObject extends AbstractComponent
 		email.sendKeys(username);
 		pass.sendKeys(password);
 		lg_button.click();
-		close();
+		
 		
 		
 	}

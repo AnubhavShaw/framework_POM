@@ -1,0 +1,49 @@
+package excelDriven;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+
+
+
+public class ExcelReadData {
+
+	public static void main(String[] args)
+	{
+		
+		String filepath="D:\\Automation Projects\\EclipseWorkSpace\\framework_POM\\ExcelFile\\FB_LoginPass.xlsx";
+		FileInputStream fis = new FileInputStream(filepath);
+		Workbook wb=new XSSFWorkbook(fis);
+		Sheet sheet = wb.getSheet("TestData");
+		Row row = sheet.getRow(1);
+		String un1 = row.getCell(0).toString();
+		String pwd1= row.getCell(1).toString();
+		
+		Row row1=sheet.getRow(2);
+		String un=row1.getCell(0).toString();
+		String pwd=row1.getCell(1).toString();
+		
+		
+		System.out.println(un+""+pwd);
+		System.out.println(un1+""+pwd1);
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+		
+		
+
+	}
+
+}
