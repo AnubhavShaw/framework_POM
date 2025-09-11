@@ -6,12 +6,15 @@ import java.io.IOException;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+;
 
 
 
 public class ExcelReadData {
 
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException
 	{
 		
 		String filepath="D:\\Automation Projects\\EclipseWorkSpace\\framework_POM\\ExcelFile\\FB_LoginPass.xlsx";
